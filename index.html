@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Analyze</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* по вертикали */
+            align-items: center;     /* по горизонтали */
+            height: 95vh;
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<form action="analyze.php" method="post" enctype="multipart/form-data">
+    <input type="file" accept=".txt" id="input" name="file"> <br>
+    <button type="submit" id="submit" disabled>Отправить файл</button>
+</form>
+<script>
+    let tag = document.getElementById("input");
+    let submit = document.getElementById("submit");
+    tag.addEventListener("change", () => {
+        submit.disabled = false;
+    });
+</script>
+</body>
+</html>
